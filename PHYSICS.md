@@ -20,11 +20,12 @@
 
 ## Overview
 
-This project estimates the speed of a cricket delivery using only a smartphone camera filming at 120 fps. No radar gun, no external sensors, no reference objects — just video and physics.
+(Note: Markdown drafted and formatted with AI assistance. All physics derivations, design decisions, and experimental concepts are original work by Aarush Mukala.)
+This project estimates the speed of a cricket delivery using only a smartphone camera filming at a high frame rate, ideally 60 or 120 fps. No radar gun, no expensive equipement, no reference objects, just videos and physics.
 
 The method works by:
 - Tracking the ball's pixel position across frames
-- Using the **curvature of the ball's parabolic arc** under gravity to extract a real-world scale (metres per pixel)
+- Using the **curvature of the ball's parabolic arc** under gravity to extract a real-world scale(metres per pixel) to convert video distance to physical distance.
 - Converting horizontal pixel velocity into real-world speed in km/h
 
 Estimated accuracy: **±5–8 km/h** at typical throwing speeds (~80 km/h), comparable to consumer radar guns.
@@ -35,7 +36,7 @@ Estimated accuracy: **±5–8 km/h** at typical throwing speeds (~80 km/h), comp
 
 A camera filming at 120 fps captures a frame every:
 
-$$\Delta t = \frac{1}{120} \approx 8.33 \text{ ms}$$
+delta t = 1/120  = approx 8.33 ms a frame, or 16.67 ms a frame for 60 fps.
 
 By tracking the ball's (x, y) pixel position across frames, we can compute velocity using:
 
